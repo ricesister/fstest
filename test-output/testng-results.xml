@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="40136" started-at="2018-07-09T06:48:42Z" finished-at="2018-07-09T06:49:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="40136" started-at="2018-07-09T06:48:42Z" finished-at="2018-07-09T06:49:22Z">
+      <class name="cbt.atm.test.NewTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="beforeClass" is-config="true" duration-ms="1986" started-at="2018-07-09T06:48:42Z" finished-at="2018-07-09T06:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="4759" started-at="2018-07-09T06:48:44Z" data-provider="findkey" finished-at="2018-07-09T06:48:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[猪]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="5305" started-at="2018-07-09T06:48:48Z" data-provider="findkey" finished-at="2018-07-09T06:48:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[孩子]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="5336" started-at="2018-07-09T06:48:54Z" data-provider="findkey" finished-at="2018-07-09T06:48:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[苹果手机]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="5304" started-at="2018-07-09T06:48:59Z" data-provider="findkey" finished-at="2018-07-09T06:49:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[猫咪]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="5326" started-at="2018-07-09T06:49:04Z" data-provider="findkey" finished-at="2018-07-09T06:49:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sss]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="4325" started-at="2018-07-09T06:49:10Z" data-provider="findkey" finished-at="2018-07-09T06:49:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1+2=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f(java.lang.String)[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="f" duration-ms="5309" started-at="2018-07-09T06:49:14Z" data-provider="findkey" finished-at="2018-07-09T06:49:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[京东]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:cbt.atm.test.NewTest@710636b0]" name="afterClass" is-config="true" duration-ms="2364" started-at="2018-07-09T06:49:19Z" finished-at="2018-07-09T06:49:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- cbt.atm.test.NewTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
