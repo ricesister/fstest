@@ -10,6 +10,8 @@ public class ReportUtil {
 	private static String splitTimeAndMsg = "===";
 	public static void log(String msg) {
 		long timeMillis = Calendar.getInstance().getTimeInMillis();
+		//TODO 日志记录
+		LoggerUtil.infoData(msg);
 		Reporter.log(timeMillis + splitTimeAndMsg + msg, true);
 	}
 
