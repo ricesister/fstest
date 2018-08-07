@@ -333,5 +333,6 @@ public class ApiTest extends TestBase {
         MailUtil.sendMail("1029830946@qq.com", DateUtil.getDate()+"cps东经接口测试报告", "自动化测试报告，请下载后查看！", sendPath);
         System.out.println(DateUtil.getDate()+"sendMail success!");
 	}
+	
 
 }
