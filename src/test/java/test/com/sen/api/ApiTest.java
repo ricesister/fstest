@@ -10,12 +10,18 @@ import com.sen.api.utils.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
+import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.AbstractHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.util.EntityUtils;
@@ -32,8 +38,14 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
 @Listeners({ AutoTestListener.class, RetryListener.class })
 public class ApiTest extends TestBase {
+	
+	private static CookieStore cookieStore;
+
 
 	/**
 	 * api请求跟路径
@@ -129,6 +141,9 @@ public class ApiTest extends TestBase {
 
 	@Test(dataProvider = "apiDatas")
 	public void apiTest(ApiDataBean apiDataBean) throws Exception {
+		
+		ClientConnectionManager connManager = new PoolingClientConnectionManager();
+	    DefaultHttpClient client = new DefaultHttpClient(connManager);
 		ReportUtil.log("--- test start ---");
 		if (apiDataBean.getSleep() > 0) {
 			// sleep休眠时间大于0的情况下进行暂停休眠
@@ -142,8 +157,13 @@ public class ApiTest extends TestBase {
 				apiDataBean.getMethod(), apiParam);
 		String responseData;
 		try {
-			// 执行
-			HttpResponse response = client.execute(method);
+			
+			
+			client.setCookieStore(cookieStore);
+		      // 执行
+		      HttpResponse response = client.execute(method);
+		      //获取响应头
+		      cookieStore= client.getCookieStore();
 			int responseStatus = response.getStatusLine().getStatusCode();
 			ReportUtil.log("返回状态码："+responseStatus);
 			if (apiDataBean.getStatus()!= 0) {
@@ -184,7 +204,7 @@ public class ApiTest extends TestBase {
 			method.abort();
 		}
 		// 输出返回数据log
-		ReportUtil.log("resp:" + responseData);
+		ReportUtil.log("返回结果:" + responseData);
 		// 验证预期信息
 		verifyResult(responseData, apiDataBean.getVerify(),
 				apiDataBean.isContains());
@@ -302,6 +322,16 @@ public class ApiTest extends TestBase {
 		}else{
 			return new StringEntity(param, "UTF-8");
 		}
+	}
+	
+	@AfterClass
+	public void sendMail() throws AddressException, UnsupportedEncodingException, MessagingException {
+		List<String> sendPath = new ArrayList<String>();
+    	System.out.println(System.getProperty("user.dir"));
+    	sendPath.add(System.getProperty("user.dir")+"\\target\\test-output\\index.html");
+    	System.out.println(System.getProperty("user.dir")+"\\target\\test-output\\index.html");
+        MailUtil.sendMail("1029830946@qq.com", DateUtil.getDate()+"cps东经接口测试报告", "自动化测试报告，请下载后查看！", sendPath);
+        System.out.println(DateUtil.getDate()+"sendMail success!");
 	}
 
 }

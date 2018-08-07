@@ -100,13 +100,13 @@
 				<goals>
 				<goal>java</goal>
 				</goals>
-				<configuration>
+				<!-- <configuration>
 				<mainClass>com.sen.api.utils.MailUtil</mainClass>
 				<arguments>
 				<argument>arg0</argument>
 				<argument>arg1</argument>
 				</arguments>
-				</configuration>
+				</configuration> -->
 				</execution>
 				</executions>
 			</plugin>
