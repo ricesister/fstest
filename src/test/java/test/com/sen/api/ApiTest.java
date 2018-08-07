@@ -324,7 +324,7 @@ public class ApiTest extends TestBase {
 		}
 	}
 	
-	@AfterClass
+	/*@AfterClass
 	public void sendMail() throws AddressException, UnsupportedEncodingException, MessagingException {
 		List<String> sendPath = new ArrayList<String>();
     	System.out.println(System.getProperty("user.dir"));
@@ -332,7 +332,7 @@ public class ApiTest extends TestBase {
     	System.out.println(System.getProperty("user.dir")+"\\target\\test-output\\index.html");
         MailUtil.sendMail("1029830946@qq.com", DateUtil.getDate()+"cps东经接口测试报告", "自动化测试报告，请下载后查看！", sendPath);
         System.out.println(DateUtil.getDate()+"sendMail success!");
-	}
+	}*/
 	
 
 }
