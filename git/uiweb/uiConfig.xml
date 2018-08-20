@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-config>
+	<!--测试地址  -->
+	<ui-address>
+		<http-addrs>
+			<http-addr>http://192.168.10.170/</http-addr>
+			<http-addr>http://192.168.10.170/</http-addr>
+		</http-addrs>
+		
+	</ui-address>
+	<!-- 项目部署jenkins相当于screens的路径 -->
+	<jenkins-path></jenkins-path>
+
+</ui-config>
