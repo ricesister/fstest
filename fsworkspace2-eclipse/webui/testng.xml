@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ui自动化测试" verbose="1" preserve-order="true" parallel="false">
+  <test name="增加首页轮播图测试">
+    <classes>
+      <class name="test.LunBoTest"/>
+      <class name="test.TGTest"></class>
+    </classes>
+  </test> <!-- Test -->
+ 	<listeners>
+		<listener class-name="listeners.ExtentTestNGIReporterListener" />
+		<listener class-name="listeners.ShotListener"></listener>
+	</listeners>
+</suite> <!-- Suite -->
