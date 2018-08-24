@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="cps.fs.dao.AuthUserDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="getUser" resultType="AuthUser" parameterType="AuthUser">
+		<!-- 具体的sql -->
+		SELECT
+			user_seq,
+			user_id,
+			user_pwd,
+			user_name,
+			createtime
+		FROM
+			auth_user
+		WHERE
+			user_id = #{AuthUser.user_id} and user_pwd = #{AuthUser.user_pwd}
+	</select>
+</mapper>
